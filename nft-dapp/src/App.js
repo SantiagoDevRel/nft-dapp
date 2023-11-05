@@ -2,6 +2,15 @@ import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Web3 from "web3";
+import env from "react-dotenv";
+
+async function connectWallet() {
+  try {
+    if (window.ethereum) {
+      const web3 = new Web3(window.ethereum);
+    }
+  } catch {}
+}
 
 function App() {
   return (
