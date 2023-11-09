@@ -31,21 +31,10 @@ async function connectWallet() {
 }
 
 async function mint() {
-  //get number from label'amount'
-  const _amountToMint = Number(document.querySelector("[name=amount]").value);
-  //ERROR HERE IF AMOUNT IS NOT RIGHT
-  if (_amountToMint < 1 || _amountToMint > 5) {
-    console.error("YOU CAN ONLY MINT BETWEEN 1 AND 5 NFTS");
-  } else {
-    console.log("REMOVE-Amount", _amountToMint);
-    //const nftPrice = Number(await contract.methods.cost().call());
-    //console.log("REMOVE-nftPrice", nftPrice);
-
-    //const _totalAmount = amountToMint * nftPrice;
-
-    //mint nft
-    //const tx = await contract.methods.mint(account0, _amountToMint).send({from: account0, value: String(_totalAmount)});
-  }
+  //const nftPrice = Number(await contract.methods.cost().call());
+  //console.log("REMOVE-nftPrice", nftPrice);
+  //mint nft
+  //const tx = await contract.methods.safeMint(account0, _amountToMint).send({from: account0, value: String(_totalAmount)});
 }
 
 function App() {
@@ -63,11 +52,9 @@ function App() {
               <label htmlFor="floatingInput" id="wallet-address">
                 Wallet address
               </label>
-              <input type="number" name="amount" defaultValue="1" min="1" max="5" style={{ background: "#ffffff72" }}></input>
-              <label>Please select the amount to mint</label>
               <Button onClick={() => mint()}>Mint</Button>
             </div>
-            <label>Price 0.6 ETH each mint</label>
+            <label>Price 0.6(connect to contract) ETH each mint</label>
           </form>
         </div>
       </div>
