@@ -17,4 +17,9 @@ contract NFT_CS is ERC721, Ownable {
         return "https://docs.gaming.chainsafe.io/img/logo.png";
     }
 
+    function safeMint() public {
+        s_totalSupply++;
+        uint256 memory _tokenId = s_totalSupply;
+        _safeMint(msg.sender, _tokenId);
+    }
 }
